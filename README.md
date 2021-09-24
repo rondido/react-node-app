@@ -1,5 +1,5 @@
 ##magnagement System
-고객 관리 시스템 입니다
+react 연습용 고객 관리 시스템 입니다
 
 # Getting Started with Create React App
 
