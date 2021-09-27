@@ -6,30 +6,9 @@ import TableHead from '@mui/material/TableHead';
 import TableBody from '@mui/material/TableBody';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
-import {createTheme, makeStyles, withStyles} from "@mui/material/styles";
 import withWidth from "@mui/material/Hidden/withWidth"; //css 적용하기
 
-const theme = createTheme();
 
-const styles = makeStyles((theme) =>{
-    root:{
-        width: '100%',
-
-    }
-});
-
-
-
-const styles = theme => ({
-    root:{
-        width: '100%',
-        marginTop:theme.spacing.unit * 3,
-        overflowX:"auto"
-    },
-    table:{
-        minWidth: 1080
-    }
-})
 
 
 const customers =
@@ -60,10 +39,9 @@ const customers =
     ]
 
 function App() { // 웹사이트 화면 출력
-    const { classes } = this.props;
     return (
-        <Paper className={classes.root}>
-            <Table className={ classes.table}>
+        <Paper >
+            <Table >
                 <TableHead>
                     <TableCell>번호</TableCell>
                     <TableCell>이미지</TableCell>
@@ -73,7 +51,8 @@ function App() { // 웹사이트 화면 출력
                     <TableCell>직업</TableCell>
                 </TableHead>
                 <TableBody>
-                    {customers.map( a => { return (<Customer
+                    {customers.map( a => {
+                        return (<Customer
                       key={a.id}
                       id={a.id}
                        image={a.image}
@@ -88,4 +67,4 @@ function App() { // 웹사이트 화면 출력
   );
 }
 
-export default withStyles(styles(App));
+export default App;
